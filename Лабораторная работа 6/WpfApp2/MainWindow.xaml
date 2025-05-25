@@ -1,0 +1,36 @@
+﻿<Window x:Class="SimplexWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Решение симплекс-методом" Height="600" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Исходная симплекс-таблица:" 
+                   FontSize="18" 
+                   FontWeight="Bold" 
+                   Margin="0,0,0,10" />
+
+        <DataGrid x:Name="InputGrid" Grid.Row="1"
+                  AutoGenerateColumns="True"
+                  HeadersVisibility="All"
+                  CanUserAddRows="True"
+                  Margin="0,0,0,10" />
+
+        <Button Content="Рассчитать" Grid.Row="2" 
+                Width="150" Height="40" 
+                HorizontalAlignment="Center"
+                Click="Calculate_Click"
+                Margin="0,10"/>
+
+        <DataGrid x:Name="ResultGrid" Grid.Row="3"
+                  AutoGenerateColumns="True"
+                  HeadersVisibility="All"
+                  IsReadOnly="True"
+                  Margin="0,10,0,0"/>
+    </Grid>
+</Window>
